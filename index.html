@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>For My Sister | Sorry & Happy Birthday</title>
+    
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&family=Great+Vibes&family=Poppins:wght@300;400;600;900&family=Playfair+Display:ital,wght@1,500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="https://unpkg.com/aos@2.3.1/dist/aos.css">
+    
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <section id="scene-opening" class="full-screen bg-pink-soft">
+        
+        <div class="floating-bg-up">
+            <span>Sorry</span> <span>😭</span> <span>Mafi Nama</span> <span>💔</span>
+            <span>Apology</span> <span>😭</span> <span>Sorry</span> <span>💔</span>
+            <span>Maaf Kardo</span> <span>😭</span> <span>Please</span> <span>💔</span>
+            <span>Sorry</span> <span>😭</span> <span>Mafi Nama</span> <span>💔</span>
+        </div>
+
+        <div class="envelope-wrapper" onclick="openEnvelope()">
+            <div class="envelope">
+                <div class="wax-seal">💔</div>
+                <div class="paper-preview"><p>...For Hiya...</p></div>
+            </div>
+            <p class="click-hint">Tap to Open 👆</p>
+        </div>
+
+        <div id="opened-letter" class="letter-view hidden">
+            <h1 class="letter-title">My Deepest Apology</h1>
+            <div class="letter-body">
+                <p><strong>Hiya,</strong></p>
+                <p>I know I messed up. The calendar changed, and I missed the most important date. I have no excuses, only regret.</p>
+                <p>This website is a small attempt to say: <strong>I AM SORRY.</strong> Please forgive your stupid brother.</p>
+            </div>
+            <h2 class="ask-text">Kiya aap mujhe maaf karenge?</h2>
+            
+            <div class="btn-group">
+                <button class="btn btn-yes" onclick="handleDecision('yes')">Yes, I Forgive You 💖</button>
+                <button class="btn btn-no" onclick="handleDecision('no')">No! Call The Police 👮‍♂️</button>
+            </div>
+            
+            <p id="guilt-msg" class="hidden error-text">Wait... I still feel guilty. I need to be punished first...</p>
+        </div>
+    </section>
+
+    <section id="scene-police" class="hidden">
+        <div class="police-lights"></div>
+        <div class="story-container">
+            <div class="story-slide" data-aos="fade-up" data-aos-offset="100">
+                <h1 class="siren-text">CUUUUU KUUUUUU 🚨</h1>
+                <p class="drama-text">Oh no! The police are here!</p>
+            </div>
+            
+            <div class="story-slide" data-aos="fade-up">
+                <img src="https://media.tenor.com/f35hXAov0iEAAAAM/event.gif" class="story-img" alt="Police Car">
+                <p class="drama-text">They are coming at 200km/h!</p>
+            </div>
+            
+            <div class="story-slide" data-aos="fade-up">
+                <img src="https://i.pinimg.com/736x/5a/83/2a/5a832a92b2cc6b74fe9ba4d30ec5b4a6.jpg" class="story-img" alt="Arrest">
+                <p class="drama-text">"You are under arrest for forgetting her birthday!"</p>
+            </div>
+            
+            <div class="story-slide" data-aos="fade-up">
+                <img src="https://thumbs.dreamstime.com/b/funny-cat-kitten-jail-prison-cell-sad-wearing-stripes-as-s-locked-up-dark-convict-doing-hard-time-will-be-366421614.jpg" class="story-img grayscale" alt="Jail">
+                <p class="drama-text">Jail is cold... no cake here...</p>
+            </div>
+            
+            <div class="story-slide" id="coding-slide">
+                <i class="fas fa-laptop-code code-icon"></i>
+                <h2 class="drama-text">Wait! I can Code a Gift!</h2>
+                <div class="terminal"><p id="code-output"></p></div>
+                
+                <button id="gift-btn" class="btn btn-gift hidden" onclick="startBirthday()">
+                    🎁 OPEN YOUR GIFT 🎁
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <section id="scene-bday" class="hidden">
+        
+        <div class="floating-bg-down">
+            <span>🌸</span> <span>🎂</span> <span>💖</span> <span>👑</span> <span>🌸</span> <span>🎂</span>
+            <span>💖</span> <span>👑</span> <span>🌸</span> <span>🎂</span> <span>💖</span> <span>👑</span>
+            <span>🌸</span> <span>🎂</span> <span>💖</span> <span>👑</span> <span>🌸</span> <span>🎂</span>
+            <span>💖</span> <span>👑</span> <span>🌸</span> <span>🎂</span> <span>💖</span> <span>👑</span>
+            <span>🌸</span> <span>🎂</span> <span>💖</span> <span>👑</span> <span>🌸</span> <span>🎂</span>
+        </div>
+
+        <div class="bday-hero">
+            <h1 class="glow-text">HAPPY BIRTHDAY <br> <span>HIYA</span></h1>
+            <p class="subtitle">The Queen of Our Universe 👑</p>
+            <div class="scroll-indicator">⬇️ Scroll Down ⬇️</div>
+        </div>
+
+        <div class="content-section" data-aos="fade-up">
+            <h2 class="section-heading">A Letter from My Heart</h2>
+            <div class="scroll-letter">
+                <p>Hey sis <br>
+                i know i am a day late but i still want to wish you from my heart <br>
+                Happy birthday 🎂❤️,</p>
+                <p>I hope yesterday was full of smiles laughter and good moments and i truly hope you felt special
+                before anything else i really need to say this i am so sorry for missing your birthday 😔
+                this mistake hurts me more than i can explain and i regret it deeply.</p>
+                <p>Forgetting your birthday doesnt mean forgetting you
+                this is the biggest mistake of my life and i promise i will never forget this lesson
+                i really hope you can forgive me</p>
+                <p><strong>Once again happy birthday sis even if its late
+                and from the bottom of my heart i am so so so sorry 😔</strong></p>
+            </div>
+        </div>
+
+        <div class="content-section" data-aos="zoom-in">
+            <h2 class="section-heading">The Birthday Girl 💖</h2>
+            <div class="royal-frame">
+                <img src="hiya photo.jpeg" alt="Beautiful Hiya">
+                <div class="crown-icon">👑</div>
+            </div>
+            <p class="photo-caption">"Elegant. Strong. Beautiful."</p>
+        </div>
+
+        <div class="content-section kkh-bg" data-aos="flip-left">
+            <h2 class="section-heading">Remember This?</h2>
+            <div class="polaroid">
+                <img src="photo with hiya .jpeg" alt="Us Together">
+                <p class="handwriting">KKH days 😊🤍</p>
+            </div>
+        </div>
+
+        <div class="content-section" data-aos="fade-up">
+            <h2>Make a Wish 🎂</h2>
+            <p class="tap-hint">(Tap the cake to cut it)</p>
+            <div class="cake-container" onclick="cutCake()">
+                <img id="cake-img" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS3eY8cvs8BkXdTVOPw-8xHSmF1ZjoCU5P8SQ&s" alt="Cake">
+                <div class="knife">🔪</div>
+            </div>
+            <h3 id="cake-msg" class="hidden-msg">Happy Birthday Didi!! 🎉</h3>
+        </div>
+
+        <div class="final-section">
+            <button class="btn btn-heartbeat" onclick="showFinalLetter()">
+                ❤️ Click for My Last Wish ❤️
+            </button>
+        </div>
+        
+        <div class="footer-space"></div>
+
+    </section>
+
+    <div id="final-modal" class="modal">
+        <div class="modal-content paper-texture">
+            <span class="close" onclick="closeModal()">&times;</span>
+            <h2>To Hiya,</h2>
+            <div class="emotional-note">
+                <p>Hiya, I know this digital gift does not define the depth of my respect and love towards you.</p>
+                <p>I know that I failed today.</p>
+                <p class="highlight-red">SORRY I WAS NOT ABLE TO EXPRESS THOSE FEELINGS ON YOUR SPECIAL BIRTHDAY.</p>
+                <p>But please know: <strong>This Love, Care, and Respect are not occasional. They are forever.</strong></p>
+                <p>I know I made a mistake. <span class="big-sorry">REALLY REALLY SORRY</span> for that.</p>
+                <p class="sign">Happy Life,<br>Your Brother</p>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
